@@ -27,6 +27,12 @@ const login = async () => {
             };
         }
 
+        const usernameField = 'input[autocomplete=username][name=text]';
+        const passwordField = 'input[autocomplete=current-password][name=password]';
+
+        await page.waitForSelector(usernameField);
+        await page.type(usernameField, username, { delay: 25 });
+
         await browser.close();
         return {
             status: true,
