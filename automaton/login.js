@@ -1,6 +1,8 @@
 const path = require('path');
 const puppeteer = require('puppeteer');
 
+const sleep = require('./sleep');
+
 const login = async () => {
     const username = process.env.LOGIN_USER;
     const password = process.env.LOGIN_PASS;
@@ -53,7 +55,7 @@ const login = async () => {
             }
         }
 
-        await page.waitForNetworkIdle();
+        await sleep(3);
 
         await browser.close();
         return {
