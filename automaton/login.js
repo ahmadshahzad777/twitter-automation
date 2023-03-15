@@ -33,6 +33,10 @@ const login = async () => {
         await page.waitForSelector(usernameField);
         await page.type(usernameField, username, { delay: 25 });
 
+        const [nextButton] = await page.$x("//span[contains(., 'Next')]");
+        await nextButton.click();
+        await page.waitForNetworkIdle();
+
         await browser.close();
         return {
             status: true,
