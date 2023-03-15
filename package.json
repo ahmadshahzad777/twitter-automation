@@ -1,0 +1,14 @@
+{
+    "author": "Ahmad Shahzad",
+    "dependencies": {},
+    "description": "A Puppeteer application to automate Twitter tweets and retweets.",
+    "devDependencies": {},
+    "license": "MIT",
+    "main": "index.js",
+    "name": "twitter-automation",
+    "private": true,
+    "scripts": {
+        "start": "node ."
+    },
+    "version": "0.0.1"
+}
