@@ -40,6 +40,21 @@ const login = async () => {
         await page.waitForSelector(passwordField);
         await page.type(passwordField, password, { delay: 25 });
 
+        const [loginButton] = await page.$x("//span[contains(., 'Log in')]");
+        await loginButton.click();
+        await page.waitForNetworkIdle();
+
+        let i = 0;
+        while (i < 1) {
+            if ((await page.url()) !== 'https://twitter.com/i/flow/login') {
+                i += 1;
+            } else {
+                await page.waitForNavigation();
+            }
+        }
+
+        await page.waitForNetworkIdle();
+
         await browser.close();
         return {
             status: true,
