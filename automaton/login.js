@@ -37,6 +37,9 @@ const login = async () => {
         await nextButton.click();
         await page.waitForNetworkIdle();
 
+        await page.waitForSelector(passwordField);
+        await page.type(passwordField, password, { delay: 25 });
+
         await browser.close();
         return {
             status: true,
