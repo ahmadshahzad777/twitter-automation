@@ -1,3 +1,4 @@
+const path = require('path');
 const puppeteer = require('puppeteer');
 
 const login = async () => {
@@ -8,7 +9,7 @@ const login = async () => {
         headless: false,
         defaultViewport: null,
         args: ['--start-maximized', '--disable-notifications'],
-        userDataDir: './userData',
+        userDataDir: path.join(__dirname, 'userData'),
     });
 
     const page = await browser.newPage();
