@@ -131,3 +131,6 @@ dist
 
 # User-generated test files
 *.test.js
+
+# Puppeteer-generated user data
+automaton/userData/
