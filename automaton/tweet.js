@@ -29,6 +29,17 @@ const tweet = async (message, files, tags) => {
 
         await page.type(editorActive, message, { delay: 25 });
 
+        if (files.length > 0 && files[0] !== '') {
+            const fileInput = 'input[data-testid=fileInput][type=file][multiple]';
+            await page.waitForSelector(fileInput);
+            const upload = await page.$(fileInput);
+
+            for (let i = 0; i < files.length; i++) {
+                await upload.uploadFile(path.join(__dirname, '..', 'public', 'uploads', files[i]));
+                await sleep(1.5);
+            }
+        }
+
         await sleep(3);
 
         await browser.close();
