@@ -141,3 +141,6 @@ public/uploads/*
 # Sass-generated files
 *.css
 *.css.map
+
+# Sqlite3 database
+*.db
