@@ -8,5 +8,20 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;
+
+        #logo {
+            h1 {
+                a {
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: #ffffff;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: #b5f1cc;
+                    }
+                }
+            }
+        }
     }
 }
