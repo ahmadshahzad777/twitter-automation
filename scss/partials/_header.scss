@@ -18,8 +18,33 @@
                     text-decoration: none;
 
                     &:hover {
-                        color: #b5f1cc;
+                        color: #f9f54b;
                     }
+                }
+            }
+        }
+
+        #menu {
+            position: relative;
+            text-align: right;
+
+            .menu-item {
+                margin-left: 15px;
+                font-size: 16px;
+                font-weight: 500;
+                text-decoration: none;
+                color: #cccccc;
+
+                &:hover {
+                    color: #f9f54b;
+                }
+            }
+
+            #login-button {
+                color: #f9f54b;
+
+                &:hover {
+                    color: #ffffff;
                 }
             }
         }
