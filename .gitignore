@@ -134,3 +134,6 @@ dist
 
 # Puppeteer-generated user data
 automaton/userData/
+
+# User-uploaded files
+public/uploads/*
