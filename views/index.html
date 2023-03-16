@@ -4,28 +4,9 @@
 <main id="content">
     <!-- THE CONTAINER -->
     <div class="container">
-        <!-- THE RETWEET FORM -->
-        <form action="/retweets/create" id="retweet:post">
-            <h2 id="retweet-heading" class="form-heading">Schedule a Retweet</h2>
-
-            <input
-                type="url"
-                name="link"
-                class="form-input"
-                id="retweet-link"
-                pattern="^https:\/\/twitter\.com\/(\w*)\/status\/(\d*)"
-                placeholder="https://twitter.com/Twitter/status/1580661436132757506"
-                required />
-
-            <input type="datetime-local" class="form-input" name="time" id="retweet-time" required />
-
-            <section id="retweet-buttons" class="buttons">
-                <button type="reset"><i class="fa-regular fa-trash-can"></i></button>
-                <button type="submit" class="doitnow" formaction="/retweets/now">Retweet</button>
-                <button type="submit" class="schedit">Schedule</button>
-            </section>
-        </form>
-        <!-- END RETWEET FORM -->
+        
+        {% include './includes/content/retweet.html' %}
+    
     </div>
     <!-- END CONTAINER -->
 </main>
