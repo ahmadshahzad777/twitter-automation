@@ -17,6 +17,18 @@ const tweet = async (message, files, tags) => {
         await page.goto('https://twitter.com/home');
         await page.waitForNetworkIdle();
 
+        const editor =
+            '.public-DraftEditor-content[aria-label="Tweet text"][data-testid="tweetTextarea_0"][role=textbox]';
+        await page.waitForSelector(editor);
+        await page.click(editor);
+        await page.click(editor);
+
+        const editorActive =
+            '.public-DraftEditor-content[aria-label="Tweet text"][data-testid="tweetTextarea_0"][role=textbox][data-focusvisible-polyfill=true]';
+        await page.waitForSelector(editorActive);
+
+        await page.type(editorActive, message, { delay: 25 });
+
         await sleep(3);
 
         await browser.close();
