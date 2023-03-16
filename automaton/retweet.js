@@ -5,7 +5,7 @@ const sleep = require('./sleep');
 
 const retweet = async (link) => {
     const browser = await puppeteer.launch({
-        headless: false,
+        headless: true,
         defaultViewport: null,
         args: ['--start-maximized', '--disable-notifications'],
         userDataDir: path.join(__dirname, 'userData'),
@@ -28,7 +28,7 @@ const retweet = async (link) => {
         }
 
         const retweetIcon = 'div[aria-label=Retweet][data-testid=retweet][aria-expanded=false][aria-haspopup=menu]';
-        const retweetButton = 'div[role=menuitem][data-testid=retweetConfirm][tabindex="0"]';
+        const retweetButton = 'div[role=menuitem][data-testid=retweetConfirm][tabindex="0"] span';
 
         await page.waitForSelector(retweetIcon);
         await page.click(retweetIcon);
