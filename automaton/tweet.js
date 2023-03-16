@@ -31,6 +31,32 @@ const tweet = async (message, files, tags) => {
                 await upload.uploadFile(path.join(__dirname, '..', 'public', 'uploads', files[i]));
                 await sleep(1.5);
             }
+
+            if (tags.length > 0 && tags[0] !== '') {
+                const tagOpen = 'a[aria-label="Tag people"][href="/compose/tweet/tags"]';
+                await page.waitForSelector(tagOpen);
+                await page.click(tagOpen);
+
+                for (let i = 0; i < tags.length; i++) {
+                    const tagField =
+                        'input[aria-label="Search query"][placeholder="Search people"][data-testid=searchPeople]';
+                    await page.waitForSelector(tagField);
+                    await page.click(tagField);
+                    await page.type(tagField, tags[i]);
+                    await page.waitForNetworkIdle();
+
+                    const tagItem = 'div[data-testid=TypeaheadUser]';
+                    if (await page.$(tagItem)) {
+                        await page.click(tagItem);
+                        await page.waitForNetworkIdle();
+                    }
+
+                    const tagFilled = 'label[data-testid=searchPeople_label]';
+                    await page.click(tagFilled, { clickCount: 3 });
+                    await page.keyboard.press('Backspace');
+                    await sleep(1.5);
+                }
+            }
         }
 
         await sleep(3);
