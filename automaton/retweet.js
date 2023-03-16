@@ -15,6 +15,17 @@ const retweet = async (link) => {
 
     try {
         await page.goto(link);
+        await page.waitForNetworkIdle();
+
+        const retweeted = 'div[aria-label=Retweeted][data-testid=unretweet][aria-expanded=false][aria-haspopup=menu]';
+        if (await page.$(retweeted)) {
+            await browser.close();
+            return {
+                status: true,
+                code: 1,
+                err: null,
+            };
+        }
 
         await sleep(3);
 
