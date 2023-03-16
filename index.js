@@ -14,8 +14,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const router = {
     home: require(path.join(__dirname, 'routes', 'index')),
+    login: require(path.join(__dirname, 'routes', 'login')),
 };
 
 app.use('/', router.home);
+app.use('/login', router.login);
 
 app.listen(port);
