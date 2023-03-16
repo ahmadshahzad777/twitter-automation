@@ -7,5 +7,88 @@
         grid-gap: 25px;
         align-items: center;
         justify-items: center;
+
+        form {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 25px;
+            box-shadow: 0 0 0 1px #444444;
+            padding: 25px;
+            background-color: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 25px #111111;
+            display: grid;
+            grid-template-rows: auto;
+            grid-gap: 25px;
+
+            .form-heading {
+                text-align: center;
+                color: #cccccc;
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+            .form-input {
+                height: 50px;
+                box-shadow: 0 0 0 1px #555555;
+                border: 0;
+                background-color: rgba(255, 255, 255, 0.07);
+                padding: 0 15px;
+                font-size: 16px;
+                border-radius: 10px;
+                color-scheme: dark;
+
+                &::placeholder {
+                    color: #aaaaaa;
+                }
+            }
+
+            .buttons {
+                height: 50px;
+                display: grid;
+                grid-template-columns: 50px 0.75fr 1.25fr;
+                grid-gap: 15px;
+
+                button {
+                    border-radius: 10px;
+                    border: 0;
+                    background-color: #f9f54b;
+                    color: #000000;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    font-size: 16px;
+                    cursor: pointer;
+
+                    &[type='reset'] {
+                        background-color: transparent;
+                        border: 3px solid red;
+                        color: red;
+
+                        &:hover {
+                            background-color: red;
+                            color: #000000;
+                        }
+                    }
+
+                    &.doitnow {
+                        border: 3px solid lemonchiffon;
+                        color: lemonchiffon;
+                        background-color: transparent;
+
+                        &:hover {
+                            background-color: lemonchiffon;
+                            color: #000000;
+                        }
+                    }
+
+                    &.schedit {
+                        box-shadow: 0 0 25px #666666;
+
+                        &:hover {
+                            background-color: lemonchiffon;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
