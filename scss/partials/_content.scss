@@ -1,0 +1,11 @@
+#content {
+    padding: 25px 0;
+
+    .container {
+        display: grid;
+        grid-template-rows: auto;
+        grid-gap: 25px;
+        align-items: center;
+        justify-items: center;
+    }
+}
