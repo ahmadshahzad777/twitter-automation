@@ -1,0 +1,20 @@
+<!-- THE RETWEET FORM -->
+<form action="/tweet/create" id="tweet" method="post">
+    <h2 id="retweet-heading" class="form-heading">Schedule a Tweet</h2>
+
+    <textarea
+        name="message"
+        id="message"
+        placeholder="What's on your mind?"
+        maxlength="280"
+        class="textarea"></textarea>
+
+    <input type="datetime-local" class="form-input" name="time" id="tweet-time" required />
+
+    <section id="tweet-buttons" class="buttons">
+        <button type="reset"><i class="fa-regular fa-trash-can"></i></button>
+        <button type="submit" class="doitnow" formaction="/tweet/now">Tweet</button>
+        <button type="submit" class="schedit">Schedule</button>
+    </section>
+</form>
+<!-- END RETWEET FORM -->
