@@ -1,68 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{{ appname }} | Twitter Automation</title>
-        <link rel="stylesheet" href="/css/style.css" />
-    </head>
-    <body>
-        <!-- THE HEADER -->
-        <header id="header">
-            <!-- THE CONTAINER -->
-            <div class="container">
-                <!-- THE LOGO -->
-                <section id="logo">
-                    <h1>
-                        <a href="/"><i class="fa-brands fa-square-twitter"></i> {{appname}}</a>
-                    </h1>
-                </section>
-                <!-- END LOGO -->
+{% include './includes/header.html' %}
 
-                <!-- THE MENU -->
-                <nav id="menu">
-                    <a href="/tweets" class="menu-item">Tweets</a>
-                    <a href="/retweets" class="menu-item">Retweets</a>
-                    <a href="/login" class="menu-item" title="Login" id="login-button">
-                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                    </a>
-                </nav>
-                <!-- END MENU -->
-            </div>
-            <!-- END CONTAINER -->
-        </header>
-        <!-- END HEADER -->
+<!-- THE CONTENT-->
+<main id="content">
+    <!-- THE CONTAINER -->
+    <div class="container">
+        <!-- THE RETWEET FORM -->
+        <form action="/retweets/create" id="retweet:post">
+            <h2 id="retweet-heading" class="form-heading">Schedule a Retweet</h2>
 
-        <!-- THE CONTENT-->
-        <main id="content">
-            <!-- THE CONTAINER -->
-            <div class="container">
-                <!-- THE RETWEET FORM -->
-                <form action="/retweets/create" id="retweet:post">
-                    <h2 id="retweet-heading" class="form-heading">Schedule a Retweet</h2>
+            <input
+                type="url"
+                name="link"
+                class="form-input"
+                id="retweet-link"
+                pattern="^https:\/\/twitter\.com\/(\w*)\/status\/(\d*)"
+                placeholder="https://twitter.com/Twitter/status/1580661436132757506"
+                required />
 
-                    <input
-                        type="url"
-                        name="link"
-                        class="form-input"
-                        id="retweet-link"
-                        pattern="^https:\/\/twitter\.com\/(\w*)\/status\/(\d*)"
-                        placeholder="https://twitter.com/Twitter/status/1580661436132757506"
-                        required />
+            <input type="datetime-local" class="form-input" name="time" id="retweet-time" required />
 
-                    <input type="datetime-local" class="form-input" name="time" id="retweet-time" required />
+            <section id="retweet-buttons" class="buttons">
+                <button type="reset"><i class="fa-regular fa-trash-can"></i></button>
+                <button type="submit" class="doitnow" formaction="/retweets/now">Retweet</button>
+                <button type="submit" class="schedit">Schedule</button>
+            </section>
+        </form>
+        <!-- END RETWEET FORM -->
+    </div>
+    <!-- END CONTAINER -->
+</main>
+<!-- END CONTENT -->
 
-                    <section id="retweet-buttons" class="buttons">
-                        <button type="reset"><i class="fa-regular fa-trash-can"></i></button>
-                        <button type="submit" class="doitnow" formaction="/retweets/now">Retweet</button>
-                        <button type="submit" class="schedit">Schedule</button>
-                    </section>
-                </form>
-                <!-- END RETWEET FORM -->
-            </div>
-            <!-- END CONTAINER -->
-        </main>
-        <!-- END CONTENT -->
-    </body>
-</html>
+{% include './includes/footer.html' %}
