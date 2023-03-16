@@ -8,6 +8,30 @@
         <link rel="stylesheet" href="/css/style.css" />
     </head>
     <body>
-        <p>Hello, {{ appname }}!</p>
+        <!-- THE HEADER -->
+        <header id="header">
+            <!-- THE CONTAINER -->
+            <div class="container">
+                <!-- THE LOGO -->
+                <section id="logo">
+                    <h1>
+                        <a href="/"><i class="fa-brands fa-square-twitter"></i> {{appname}}</a>
+                    </h1>
+                </section>
+                <!-- END LOGO -->
+
+                <!-- THE MENU -->
+                <nav id="menu">
+                    <a href="/tweets" class="menu-item">Tweets</a>
+                    <a href="/retweets" class="menu-item">Retweets</a>
+                    <a href="/login" class="menu-item" id="login-button">
+                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    </a>
+                </nav>
+                <!-- END MENU -->
+            </div>
+            <!-- END CONTAINER -->
+        </header>
+        <!-- END HEADER -->
     </body>
 </html>
