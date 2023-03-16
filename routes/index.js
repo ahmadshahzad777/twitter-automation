@@ -4,5 +4,5 @@ const router = express.Router();
 module.exports = router;
 
 router.get('/', (req, res) => {
-    res.send(`Hello, ${process.env.LOGIN_USER}!`);
+    res.render('index', { appname: process.env.LOGIN_USER });
 });
