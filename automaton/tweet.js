@@ -20,14 +20,7 @@ const tweet = async (message, files, tags) => {
         const editor =
             '.public-DraftEditor-content[aria-label="Tweet text"][data-testid="tweetTextarea_0"][role=textbox]';
         await page.waitForSelector(editor);
-        await page.click(editor);
-        await page.click(editor);
-
-        const editorActive =
-            '.public-DraftEditor-content[aria-label="Tweet text"][data-testid="tweetTextarea_0"][role=textbox][data-focusvisible-polyfill=true]';
-        await page.waitForSelector(editorActive);
-
-        await page.type(editorActive, message, { delay: 25 });
+        await page.type(editor, message, { delay: 25 });
 
         if (files.length > 0 && files[0] !== '') {
             const fileInput = 'input[data-testid=fileInput][type=file][multiple]';
