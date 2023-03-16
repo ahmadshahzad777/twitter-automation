@@ -5,7 +5,8 @@
         "express": "^4.18.2",
         "nunjucks": "^3.2.3",
         "puppeteer": "^19.7.5",
-        "sass": "^1.59.3"
+        "sass": "^1.59.3",
+        "sqlite3": "^5.1.6"
     },
     "description": "A Puppeteer application to automate Twitter tweets and retweets.",
     "devDependencies": {
