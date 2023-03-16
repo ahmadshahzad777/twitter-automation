@@ -56,11 +56,22 @@ const tweet = async (message, files, tags) => {
                     await page.keyboard.press('Backspace');
                     await sleep(1.5);
                 }
+
+                if (!(await page.$('div[aria-label$="select to remove"]'))) {
+                    await page.click('div[aria-label=Close][data-testid=app-bar-close]');
+                } else {
+                    const [done] = await page.$x(`//span[contains(., 'Done')]`);
+                    await done.click();
+                }
             }
         }
 
-        await sleep(3);
+        const tweetButton = 'div[data-testid="tweetButtonInline"]';
+        await page.waitForSelector(tweetButton);
+        await page.click(tweetButton);
+        await page.waitForNetworkIdle();
 
+        await sleep(3);
         await browser.close();
         return {
             status: true,
