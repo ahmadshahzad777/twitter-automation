@@ -19,9 +19,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const router = {
     home: require(path.join(__dirname, 'routes', 'index')),
     login: require(path.join(__dirname, 'routes', 'login')),
+    retweets: require(path.join(__dirname, 'routes', 'retweets')),
 };
 
 app.use('/', router.home);
 app.use('/login', router.login);
+app.use('/retweets', router.retweets);
 
 app.listen(port);
