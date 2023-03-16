@@ -27,6 +27,15 @@ const retweet = async (link) => {
             };
         }
 
+        const retweetIcon = 'div[aria-label=Retweet][data-testid=retweet][aria-expanded=false][aria-haspopup=menu]';
+        const retweetButton = 'div[role=menuitem][data-testid=retweetConfirm][tabindex="0"]';
+
+        await page.waitForSelector(retweetIcon);
+        await page.click(retweetIcon);
+        await page.waitForSelector(retweetButton);
+        await page.click(retweetButton);
+        await page.waitForSelector(retweeted);
+
         await sleep(3);
 
         await browser.close();
