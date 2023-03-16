@@ -8,6 +8,13 @@
     font-family: 'Inter', sans-serif;
 }
 
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
 body {
     width: 100%;
     min-height: 100vh;
