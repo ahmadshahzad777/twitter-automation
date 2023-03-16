@@ -19,6 +19,7 @@
             display: grid;
             grid-template-rows: auto;
             grid-gap: 25px;
+            position: relative;
 
             .form-heading {
                 text-align: center;
@@ -55,6 +56,63 @@
 
                 &::placeholder {
                     color: #aaaaaa;
+                }
+            }
+
+            #images,
+            .images {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 25px;
+
+                .img {
+                    width: 81.25px;
+                    height: 81.25px;
+                    border-radius: 10px;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+
+                .img-label {
+                    width: 81.25px;
+                    height: 81.25px;
+                    background-color: #444;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    position: relative;
+
+                    &.no-preview {
+                        background-image: url('/images/image.svg');
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: 24px;
+                    }
+
+                    &.the-preview {
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+
+                    .img-input {
+                        display: none;
+                    }
+
+                    .remove-preview {
+                        position: absolute;
+                        width: 18px;
+                        height: 18px;
+                        background: #ff6262;
+                        border-radius: 100%;
+                        right: 0;
+                        transform: translate(50%, -50%);
+                        z-index: 999;
+
+                        &.hidden {
+                            display: none;
+                        }
+                    }
                 }
             }
 
