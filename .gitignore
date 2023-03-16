@@ -137,3 +137,7 @@ automaton/userData/
 
 # User-uploaded files
 public/uploads/*
+
+# Sass-generated files
+*.css
+*.css.map
