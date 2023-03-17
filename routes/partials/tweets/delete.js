@@ -9,10 +9,10 @@ const db = require(path.join(__dirname, '..', '..', '..', 'db'));
 router.post('/', async (req, res) => {
     let id = req.body.id;
 
-    db.run(`DELETE FROM retweets WHERE id = ${id}`, (err) => {
+    db.run(`DELETE FROM tweets WHERE id = ${id}`, (err) => {
         if (err) {
-            console.error('There was an error deleting the retweet from the database.');
+            console.error('There was an error deleting the tweet from the database.');
         }
-        return res.redirect('/retweets');
+        return res.redirect('/tweets');
     });
 });
