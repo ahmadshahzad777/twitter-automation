@@ -11,7 +11,7 @@ const retweets = {
     create: require(path.join(__dirname, 'partials', 'retweets', 'create')),
     update: require(path.join(__dirname, 'partials', 'retweets', 'update')),
     delete: require(path.join(__dirname, 'partials', 'retweets', 'delete')),
-    // reorder: require(path.join(__dirname, 'partials', 'retweets', 'reorder')),
+    reorder: require(path.join(__dirname, 'partials', 'retweets', 'reorder')),
 };
 
 router.use('/', retweets.get);
@@ -20,4 +20,4 @@ router.use('/order', retweets.order);
 router.use('/create', retweets.create);
 router.use('/update', retweets.update);
 router.use('/delete', retweets.delete);
-// router.use('/reorder', retweets.reorder);
+router.use('/reorder', retweets.reorder);

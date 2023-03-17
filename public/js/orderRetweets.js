@@ -72,14 +72,14 @@ function moveDown(t) {
 }
 
 function cancelSave() {
-    window.location.href = '/posts';
+    window.location.href = '/retweets';
 }
 
 async function saveRetweets() {
     const response = await fetch('/retweets/reorder', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ lem: posts }),
+        body: JSON.stringify({ lem: retweets }),
     });
     const status = (await response.json()).status;
 
