@@ -23,6 +23,6 @@ router.post('/', (req, res) => {
             return res.redirect('/');
         }
 
-        return res.redirect('/posts');
+        return res.redirect('/retweets');
     });
 });
