@@ -1,0 +1,17 @@
+{% include './includes/header.html' %}
+
+<!-- THE CONTENT -->
+<main id="content">
+    <!-- THE CONTAINER -->
+    <div class="container"></div>
+    <!-- END CONTAINER -->
+</main>
+<!-- END CONTENT -->
+
+<script>
+    const tweets = JSON.parse('{{ tweets | dump | safe }}');
+</script>
+
+<script src="/js/orderTweets.js"></script>
+
+{% include './includes/footer.html' %}
