@@ -59,9 +59,11 @@ const tweet = async (message, files, tags) => {
 
                 if (!(await page.$('div[aria-label$="select to remove"]'))) {
                     await page.click('div[aria-label=Close][data-testid=app-bar-close]');
+                    console.log('Tag Closed!');
                 } else {
                     const [done] = await page.$x(`//span[contains(., 'Done')]`);
                     await done.click();
+                    console.log('Tag Done!');
                 }
             }
         }
@@ -72,6 +74,11 @@ const tweet = async (message, files, tags) => {
         await page.waitForNetworkIdle();
 
         await sleep(3);
+
+        const [sendNowButton] = await page.$x("//span[contains(., 'Send now')]");
+        await sendNowButton.click();
+
+        await sleep(5);
         await browser.close();
         return {
             status: true,
