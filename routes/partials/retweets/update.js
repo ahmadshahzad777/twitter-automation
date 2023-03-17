@@ -12,12 +12,6 @@ router.post('/', (req, res) => {
     let date = req.body.time;
     let priority = req.body.priority;
 
-    let INSERT_RECORD = 'UPDATE INTO retweets (link, time, priority) VALUES (';
-    INSERT_RECORD += `"${link}", `;
-    INSERT_RECORD += `"${date}", `;
-    INSERT_RECORD += priority;
-    INSERT_RECORD += ')';
-
     let UPDATE_RECORD = 'UPDATE retweets SET ';
     UPDATE_RECORD += `link = "${link}", `;
     UPDATE_RECORD += `time = "${date}", `;
