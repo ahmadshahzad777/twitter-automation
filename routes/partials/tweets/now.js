@@ -26,7 +26,7 @@ router.post(
 
         const message = req.body.message;
         let images = the_images.split('/-|-/');
-        const tags = req.body.tags;
+        const tags = req.body.tags.split('|');
 
         if (id) {
             db.get(`SELECT files FROM tweets WHERE id = ${id}`, (err, row) => {
