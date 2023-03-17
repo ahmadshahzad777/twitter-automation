@@ -59,12 +59,12 @@ const tweet = async (message, files, tags) => {
 
                 if (!(await page.$('div[aria-label$="select to remove"]'))) {
                     await page.click('div[aria-label=Close][data-testid=app-bar-close]');
-                    console.log('Tag Closed!');
                 } else {
                     const [done] = await page.$x(`//span[contains(., 'Done')]`);
                     await done.click();
-                    console.log('Tag Done!');
                 }
+
+                await sleep(5);
             }
         }
 

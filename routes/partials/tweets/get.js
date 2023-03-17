@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
                     id: row.id,
                     message: Buffer.from(row.message, 'base64').toString('utf-8'),
                     files: Buffer.from(row.files, 'base64').toString('utf-8').split('/-|-/'),
-                    tags: Buffer.from(row.tags, 'base64').toString('utf-8').split('|'),
+                    tags: Buffer.from(row.tags, 'base64').toString('utf-8'),
                     time: row.time,
                     priority: row.priority,
                 };

@@ -11,14 +11,15 @@
         {% for tweet in tweets %}
         <!-- THE TWEET FORM -->
         <form action="/tweets/update" id="tweet" method="post">
+            <p class="index">{{ loop.index }}</p>
             <h2 id="tweet-heading" class="form-heading">Update the Tweet</h2>
 
             <input type="number" name="id" value="{{ tweet.id }}" style="display: none" />
             <input type="number" name="priority" value="{{ tweet.priority }}" style="display: none" />
 
             <textarea name="message" id="message" placeholder="What's on your mind?" maxlength="280" class="textarea">
-{{ tweet.message }}
-            </textarea>
+{{ tweet.message }}</textarea
+            >
 
             {% if tweet.files[0] !== '' %}
             <div id="tweet-image-holder">
