@@ -103,6 +103,18 @@
                 }
             }
 
+            #tweet-image-holder {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 25px;
+
+                img {
+                    height: 81.25px;
+                    width: 81.25px;
+                    border-radius: 10px;
+                }
+            }
+
             #images,
             .images {
                 display: grid;

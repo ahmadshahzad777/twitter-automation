@@ -1,0 +1,61 @@
+{% include './includes/header.html' %}
+
+<!-- THE CONTENT -->
+<main id="content">
+    <!-- THE CONTAINER -->
+    <div class="container">
+        <section id="action">
+            <button id="save"><a href="/tweets/order">Re-Order Tweets</a></button>
+        </section>
+
+        {% for tweet in tweets %}
+        <!-- THE TWEET FORM -->
+        <form action="/tweets/update" id="tweet" method="post">
+            <h2 id="tweet-heading" class="form-heading">Update the Tweet</h2>
+
+            <input type="number" name="id" value="{{ tweet.id }}" style="display: none" />
+            <input type="number" name="priority" value="{{ tweet.priority }}" style="display: none" />
+
+            <textarea name="message" id="message" placeholder="What's on your mind?" maxlength="280" class="textarea">
+{{ tweet.message }}
+            </textarea>
+
+            {% if tweet.files[0] !== '' %}
+            <div id="tweet-image-holder">
+                {% for image in tweet.files %}
+                <img src="/uploads/{{ image }}" />
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <input
+                type="text"
+                name="tags"
+                id="tags"
+                class="form-input"
+                pattern="[a-zA-Z0-9_|]{0,}"
+                placeholder="Twitter|elonmusk|PapaJohns|tyt__l"
+                value="{{ tweet.tags }}" />
+
+            <input
+                type="datetime-local"
+                class="form-input"
+                name="time"
+                id="tweet-time"
+                value="{{ tweet.time }}"
+                required />
+
+            <section id="tweet-buttons" class="buttons">
+                <button type="delete" formaction="/tweets/delete"><i class="fa-regular fa-trash-can"></i></button>
+                <button type="submit" class="doitnow" formaction="/tweets/now">tweet</button>
+                <button type="submit" class="schedit">Update</button>
+            </section>
+        </form>
+        <!-- END TWEET FORM -->
+        {% endfor %}
+    </div>
+    <!-- END CONTAINER -->
+</main>
+<!-- END CONTENT -->
+
+{% include './includes/footer.html' %}
