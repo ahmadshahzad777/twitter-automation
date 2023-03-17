@@ -1,0 +1,17 @@
+{% include './includes/header.html' %}
+
+<!-- THE CONTENT -->
+<main id="content">
+    <!-- THE CONTAINER -->
+    <div class="container"></div>
+    <!-- END CONTAINER -->
+</main>
+<!-- END CONTENT -->
+
+<script>
+    const retweets = JSON.parse('{{ retweets | dump | safe }}');
+</script>
+
+<script src="/js/orderRetweets.js"></script>
+
+{% include './includes/footer.html' %}

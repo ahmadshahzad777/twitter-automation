@@ -12,19 +12,22 @@
             height: 50px;
             width: 250px;
             border-radius: 10px;
-            background-color: #ffffff30;
+            background-color: lemonchiffon;
             font-weight: 700;
             border: 0;
+            cursor: pointer;
+            color: #000000;
+            text-transform: uppercase;
+            margin-right: 15px;
 
             &:hover {
-                background-color: #ffffff50;
+                background-color: #f9f54b;
             }
 
             a {
                 text-decoration: none;
                 text-transform: uppercase;
                 display: grid;
-                color: #ffffff;
                 height: 50px;
                 width: 100%;
                 align-items: center;
@@ -32,7 +35,24 @@
             }
         }
 
-        form {
+        #cancel {
+            height: 50px;
+            width: 150px;
+            border-radius: 10px;
+            background-color: #ffffff40;
+            border: 0;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-left: 15px;
+
+            &:hover {
+                background-color: rgb(255, 80, 80);
+            }
+        }
+
+        form,
+        .form {
             width: 100%;
             max-width: 450px;
             border-radius: 25px;
@@ -202,6 +222,26 @@
                             background-color: lemonchiffon;
                         }
                     }
+                }
+            }
+
+            .reorder-buttons {
+                position: absolute;
+                top: 50px;
+                left: -50px;
+                display: grid;
+                grid-template-rows: 1fr 1fr;
+                grid-gap: 15px;
+                width: 30px;
+                height: 75px;
+
+                button {
+                    font-size: 20px;
+                    border: 0;
+                    background-color: transparent;
+                    color: #ffffff;
+                    border-radius: 5px;
+                    cursor: pointer;
                 }
             }
         }
