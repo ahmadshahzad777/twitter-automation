@@ -29,3 +29,5 @@ app.use('/tweets', router.tweets);
 app.use('/retweets', router.retweets);
 
 app.listen(port);
+
+require(path.join(__dirname, 'cronjob'));

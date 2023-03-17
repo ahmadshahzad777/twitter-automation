@@ -5,7 +5,7 @@ const sleep = require('./sleep');
 
 const tweet = async (message, files, tags) => {
     const browser = await puppeteer.launch({
-        headless: false,
+        headless: true,
         defaultViewport: null,
         args: ['--start-maximized', '--disable-notifications'],
         userDataDir: path.join(__dirname, 'userData'),
