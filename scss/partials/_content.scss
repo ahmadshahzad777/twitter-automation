@@ -23,8 +23,12 @@
             a {
                 text-decoration: none;
                 text-transform: uppercase;
-                display: block;
+                display: grid;
                 color: #ffffff;
+                height: 50px;
+                width: 100%;
+                align-items: center;
+                justify-items: center;
             }
         }
 
