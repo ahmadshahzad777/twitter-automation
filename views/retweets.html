@@ -1,0 +1,49 @@
+{% include './includes/header.html' %}
+
+<!-- THE CONTENT -->
+<main id="content">
+    <!-- THE CONTAINER -->
+    <div class="container">
+        <section id="action">
+            <button id="save"><a href="/retweets/order">Re-Order Retweets</a></button>
+        </section>
+
+        {% for retweet in retweets %}
+        <form action="/retweets/update" method="post">
+            <p class="index">{{ loop.index }}</p>
+
+            <input type="number" name="id" value="{{ retweet.id }}" style="display: none" />
+
+            <h2 class="form-heading">Update the Schedule</h2>
+
+            <input
+                type="url"
+                name="link"
+                class="form-input"
+                id="retweet-link"
+                pattern="^https:\/\/twitter\.com\/(\w*)\/status\/(\d*)"
+                placeholder="https://twitter.com/Twitter/status/1580661436132757506"
+                value="{{ retweet.link }}"
+                required />
+
+            <input
+                type="datetime-local"
+                class="form-input"
+                name="time"
+                id="retweet-time"
+                value="{{ retweet.time }}"
+                required />
+
+            <section id="retweet-buttons" class="buttons">
+                <button type="delete" formaction="/retweets/delete"><i class="fa-regular fa-trash-can"></i></button>
+                <button type="submit" class="doitnow" formaction="/retweets/now">Retweet</button>
+                <button type="submit" class="schedit">Update</button>
+            </section>
+        </form>
+        {% endfor %}
+    </div>
+    <!-- END CONTAINER -->
+</main>
+<!-- END CONTENT -->
+
+{% include './includes/footer.html' %}

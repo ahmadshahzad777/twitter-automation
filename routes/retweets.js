@@ -5,7 +5,7 @@ const router = express.Router();
 module.exports = router;
 
 const retweets = {
-    // get: require(path.join(__dirname, 'partials', 'retweets', 'get')),
+    get: require(path.join(__dirname, 'partials', 'retweets', 'get')),
     now: require(path.join(__dirname, 'partials', 'retweets', 'now')),
     // order: require(path.join(__dirname, 'partials', 'retweets', 'order')),
     create: require(path.join(__dirname, 'partials', 'retweets', 'create')),
@@ -14,7 +14,7 @@ const retweets = {
     // reorder: require(path.join(__dirname, 'partials', 'retweets', 'reorder')),
 };
 
-// router.use('/', retweets.get);
+router.use('/', retweets.get);
 router.use('/now', retweets.now);
 // router.use('/order', retweets.order);
 router.use('/create', retweets.create);

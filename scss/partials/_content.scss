@@ -4,9 +4,29 @@
     .container {
         display: grid;
         grid-template-rows: auto;
-        grid-gap: 25px;
+        grid-gap: 50px;
         align-items: center;
         justify-items: center;
+
+        #save {
+            height: 50px;
+            width: 250px;
+            border-radius: 10px;
+            background-color: #ffffff30;
+            font-weight: 700;
+            border: 0;
+
+            &:hover {
+                background-color: #ffffff50;
+            }
+
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
+                display: block;
+                color: #ffffff;
+            }
+        }
 
         form {
             width: 100%;
@@ -114,6 +134,22 @@
                         }
                     }
                 }
+            }
+
+            .index {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 50px;
+                width: 50px;
+                transform: translate(-35%, -35%);
+                background-color: lemonchiffon;
+                border-radius: 10px;
+                display: grid;
+                align-items: center;
+                justify-items: center;
+                font-size: 18px;
+                font-weight: 600;
             }
 
             .buttons {
