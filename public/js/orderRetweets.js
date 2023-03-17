@@ -71,7 +71,7 @@ function moveDown(t) {
     }
 }
 
-function cancelSave() {
+function cancelRetweets() {
     window.location.href = '/retweets';
 }
 

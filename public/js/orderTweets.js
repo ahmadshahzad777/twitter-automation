@@ -73,7 +73,7 @@ function moveDown(t) {
     }
 }
 
-function cancelSave() {
+function cancelTweets() {
     window.location.href = '/tweets';
 }
 
