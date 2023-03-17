@@ -1,5 +1,5 @@
 <!-- THE RETWEET FORM -->
-<form action="/tweet/create" id="tweet" method="post">
+<form action="/tweets/create" id="tweet" enctype="multipart/form-data" method="post">
     <h2 id="retweet-heading" class="form-heading">Schedule a Tweet</h2>
 
     <textarea
@@ -31,11 +31,19 @@
         </label>
     </section>
 
+    <input
+        type="text"
+        name="tags"
+        id="tags"
+        class="form-input"
+        pattern="[a-zA-Z0-9_|]{0,}"
+        placeholder="Twitter|elonmusk|PapaJohns|tyt__l" />
+
     <input type="datetime-local" class="form-input" name="time" id="tweet-time" required />
 
     <section id="tweet-buttons" class="buttons">
         <button type="reset"><i class="fa-regular fa-trash-can"></i></button>
-        <button type="submit" class="doitnow" formaction="/tweet/now">Tweet</button>
+        <button type="submit" class="doitnow" formaction="/tweets/now">Tweet</button>
         <button type="submit" class="schedit">Schedule</button>
     </section>
 </form>
